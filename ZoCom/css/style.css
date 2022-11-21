@@ -9,7 +9,9 @@
     --text_color_list_hover: #E0D6FF;
     --lesson_module_background: #E6EBF3;
     --module_goal_background:#F5F5F5;
-
+    --shade-dark-8:rgba(20, 22, 25, 0.08);
+    --klar-button: #EA4848;
+    --lesson: #E0D6FF; 
 }
 
 * {
@@ -18,7 +20,7 @@
 
 body{
     max-width: 900px;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: #fff;
     display: flex;
@@ -26,8 +28,9 @@ body{
     gap: 20px;;
 }
 
-h1,h2,h3,a,p,span {
+h1,h2,h3,h4,a,p,span {
     font-family: 'Cairo', Georgia, Times,serif;
+    
 }
 a{
     text-decoration: none;
@@ -45,6 +48,7 @@ a{
 .H3_header{
     font-weight: 600; 
     font-size: 1.37rem;
+    color: var(--text_secondry_text_dark);
 }
 
 .card_p_short_desc{
@@ -133,15 +137,15 @@ a{
 }
 .lesson_header__right__list > li{
     display:flex;
-    margin:1rem;
+    margin: 1rem 0;
 }
 .lesson_header__right__list li > p {
-    margin:0 1rem;
-    font-size: 1rem;
-    font-weight: 400;
+    margin:0;
+    /* font-size: 1rem; */
+    /* font-weight: 400; */
 }
 .lesson_header__right__list > li span {
-    margin: 0;
+    margin: 0 1rem 0 0 ;
     padding:0 .6rem ;
     background:rgba(243, 245, 247, 0.94); 
 }
@@ -152,15 +156,10 @@ a{
 
 .Start_Activity_Self_Assessment_bar{
     display: flex;
-    max-width: 33rem;
     justify-content:space-between;
     align-items: center;
     margin: 0;
     padding: 0;
-    border-radius: 0.25rem;
-    overflow: hidden;
-    border:0.062rem solid var(--text_color);
-
 }
 
 .Start_Activity_Self_Assessment_bar a{
@@ -168,10 +167,17 @@ a{
     text-align: center;
     border:0.062rem solid var(--text_color);
     padding:0.5rem 0;
-    flex-shrink: 0;
+    flex-shrink: 0; 
 }
 
-.Start_Activity_Self_Assessment_bar__activ {
+.Start_Activity_Self_Assessment_bar a:last-child{
+    border-radius: 0 .5rem .5rem 0;
+}
+.Start_Activity_Self_Assessment_bar a:first-child{
+    border-radius:.5rem 0 0 .5rem;
+}
+
+.Button__activ {
     background-color: var(--text_color_dark_shade_80);
     color: #fff;
 }
@@ -185,6 +191,278 @@ a{
 /* '<!--START Modul Goal -->' */
 
 .Modul_Goal{
-    background: var(--module_goal_background);
-    padding:.25rem .5rem;
+    display: table;
+    background: var(--shade-dark-8);
+    padding:.25rem 1rem;
+  
+}
+
+
+/* '<!--START LINK -->' */
+.Modul_link {
+    display: flex;
+    align-items: center;
+    color:var(--text_color);
+    font-weight: 300;
+}
+
+.Modul_link::before {
+    content: ' ';
+    width: 2rem; 
+    height: 2rem;
+    padding:0 1rem 0 0 ;
+    margin:0;  
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/68/Video_camera_icon.svg);
+    background-repeat: no-repeat;
+}
+
+
+.Modul_link_pdf {
+    display: flex;
+    align-items: center;
+    color:var(--text_color);
+    font-weight: 300;
+}
+
+.Modul_link_pdf::before {
+    content: ' ';
+    width: 2rem; 
+    height: 2rem;
+    padding:0 1rem 0 0 ;
+    margin:0;  
+    background-image: url(https://www.svgrepo.com/show/12712/document.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem 2rem;
+}
+
+
+/* <!--START Course Card  --> */
+
+.course_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: var(--toolBar_courseCard_background);
+    padding: 0;
+    margin: 0 auto;
+    max-width: 15rem;
+    border-radius: .5rem .5rem 0 0 ;
+    overflow: hidden;
+
+
+
+}
+
+.course_card__image{
+    margin: 0;
+    padding: 0;
+;
+
+}
+
+.course_card__image img{
+    margin: 0;
+    width: 100%;
+    height: 12.5rem;
+    padding: 0;
+}
+
+.course_card__description{
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.2rem;
+}
+
+.H4_card_header{
+    margin: 0;
+    font-size: 1.12rem;
+    font-weight: 600; 
+}
+
+.course_card__description p {
+    margin: 0;
+    font-size: .87rem;
+    font-weight: 300; 
+}
+
+.course_card_menu{
+    margin:2.5rem 0 0 0 ;
+    text-align: center;
+    width: 100%;
+    border-radius:.5rem ;
+    overflow: hidden;
+}
+
+.course_card_menu > li{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+.course_card_menu > li a{
+    display: block;
+    padding: .25rem 0 ;
+    margin: .09rem 0;
+    background: var(--shade-dark-8);
+    color: var(--text_secondry_text_dark);
+}
+
+.course_card_menu li .Button__activ   {
+    color: #fff;
+    background-color: var(--text_color_dark_shade_80);
+   
+}
+ 
+/* toggle button  */
+
+
+.toggle_button_container{
+
+    display: flex;
+    align-items: center;
+    
+
+}
+
+
+
+.toggle_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 2.5rem;
+    height: 1.25rem;
+    padding:0;
+    margin: 0 1rem;
+    border: .2rem solid var(--text_color);
+    background-color: var(--text_color) ;
+    border-radius: 5rem;
+}
+
+.toggle_button::after{
+    display: block;
+    width: 1rem; 
+    height: 1rem;
+    content: ' ';
+    background: #fff;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+}
+
+
+.toggle_button:hover{
+    justify-content:flex-start;
+    background-color:rgb(2, 209, 2);
+
+
+}
+
+
+
+
+
+
+/* range_slider */
+
+
+.range_slider{
+    display: flex;
+    align-items: center;
+    margin:0;
+    padding: 0;
+}
+
+.sliderRange{
+    appearance: none;
+    flex-grow: 1;
+    height: .1rem;
+    margin: 0 2rem;
+    width: 20rem;
+    background: #141619;
+}
+.sliderRange::-webkit-slider-thumb{
+    appearance: none;
+    width: 26px; 
+    height: 26px;
+    background-color: #141619;
+    border-radius: 50%;
+}
+
+/* range_slider */
+
+
+
+/* klar_Button */
+.Klar_button_container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Klar_button{
+    color: var(--text_color_list_hover);  
+    appearance: none;
+    background: var(--klar-button);
+    border: none;
+    width: 100%;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    border-radius: .25rem;
+}
+
+.Klar_button:hover{
+    background: #ef6565;
+}
+.Klar_button:active{
+    background: #8b3b3b;
+}
+
+
+.lesson{
+    background-color: var(--lesson);
+    margin-bottom: 10rem;
+}
+.lesson p{
+    font-weight: 600;
+}
+
+
+.lesson__modul_links{
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    border-radius: .5rem;
+    overflow: hidden;
+
+}
+
+.lesson .Start_Activity_Self_Assessment_bar{
+    margin-top: 2rem;
+}
+
+
+.lesson_date__section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+}
+
+.lesson_date__section p , .lesson_date__section h3 {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+.lesson_date__section p {
+    line-height: 1.1rem;
 }
