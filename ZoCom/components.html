@@ -12,9 +12,23 @@
     <!-- site_navbar -->
     <div> 
         <nav class="site_navbar">
-            <figure class="site_navbar--menuButton"><div></div><div></div><div></div></figure>
-            <figure class="site_navbar--logo"> <img src="images/zoCom.svg" alt="ZoCom"> </figure>
-            <figure class="site_navbar--bug"> <img src="/images/bug.svg" alt=""></figure>
+            <a href="#">
+                <figure class="site_navbar--menuButton">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </figure>
+            </a>
+            <figure class="site_navbar--logo"><a href="#"><img src="images/zoCom.svg" alt="ZoCom"> </a></figure>
+            <figure class="site_navbar--bug"> <a href="#"><img src="/images/bug.svg" alt=""></a></figure>
+            <section class="site_navbar--sideMenu sideMenu--close">
+                <button class="site_navbar--sideMenu--exitButton">x</button>
+                <ul class="site_navbar--sideMenu--list">
+                    <li><a href="index1.html"> Practise 1</a></li>
+                    <li><a href="index2.html">Practise 2</a></li>
+                    <li><a href="components.html">Components</a></li>
+                </ul>
+            </section>
         </nav>
     </div>
 
@@ -78,7 +92,7 @@
 <!--START Course Card  -->
 <div>
         <article class="course_card">
-            <figure class="course_card__image"><img src="css/bg.jpg" alt=""></figure>
+            <figure class="course_card__image"><img src="images/bg.jpg" alt=""></figure>
             <section class="course_card__description">
                 <h4 class="H4_card_header">En awesome kurs i grejer</h4>
                 <p>med Lärare lärarsson</p>
@@ -113,12 +127,12 @@
         <figure class="range_slider">
             <p>förstår inte</p>
             <input type="range" min="1" max="100" value="50" class="sliderRange">
-
+    
             <p>förstår allt</p>
-
-
+    
+    
         </figure>
-         </nav>
+    </nav>
 </div>
 <!-- Silder END-->
 
@@ -146,8 +160,8 @@
         <p>Responsive web design agile development funding MVP alpha channels. User experience beta branding supply chain social proof scrum project ramen influencer hypotheses termsheet.</p>
         
         <ul class="lesson__modul_links">
-            <li><a  href="#" class="Modul_Goal Modul_link_pdf">PDF artikel om bananböjning</a></li>
-            <li> <a  href="#" class="Modul_Goal Modul_link">Super awesome video</a></li>
+            <li><a  href="#" class="Modul_link Modul_link_pdf">PDF artikel om bananböjning</a></li>
+            <li> <a  href="#" class="Modul_link Modul_link_camera">Super awesome video</a></li>
         </ul>
         
         <nav class="Start_Activity_Self_Assessment_bar card_p_short_desc">
@@ -162,6 +176,6 @@
 
 <!-- lesson END-->
 
-
+<script src="js/script.js"></script>
 </body>
 </html>

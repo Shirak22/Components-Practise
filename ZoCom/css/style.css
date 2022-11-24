@@ -12,6 +12,7 @@
     --shade-dark-8:rgba(20, 22, 25, 0.08);
     --klar-button: #EA4848;
     --lesson: #E0D6FF;
+    --lesson-blue : #B6DCFF;
 
 }
 
@@ -27,7 +28,7 @@ body{
 }
 
 .wrapper{
-    max-width: 900px;
+    max-width:800px;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -96,6 +97,61 @@ a{
 
 .site_navbar--menuButton div:nth-child(2){width: 80%;}
 .site_navbar--menuButton div:nth-child(3){width: 40%;}
+
+.site_navbar--sideMenu{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 1rem 5rem;
+    transition: all 1s;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.site_navbar--sideMenu--exitButton{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    right: 0;
+    padding:1rem;
+    margin:2rem;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    color: #F5F6FF;
+    background-color:rgba(255, 255, 255, .5);
+    
+}
+
+.sideMenu--close{
+    transform: translate(-100% , 0);
+}
+
+.sideMenu--open{
+    transform: translate(0 , 0);
+}
+
+.site_navbar--sideMenu--exitButton:hover{
+    background: #EA4848;
+}
+.site_navbar--sideMenu a{
+    color: var(--text_color_list_hover);
+    font-size: 2rem;
+}
+
+.site_navbar--sideMenu a:hover{
+    color: var(--klar-button);
+}
+
+
 .site_navbar--logo{
     width: 106px;
     margin: 0;
@@ -130,11 +186,11 @@ a{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
-
     background-color:var(--toolBar_courseCard_background) ;
     padding:0.5rem 0;
-    margin: 0;
+    margin: 1rem;
+    border-radius: 0.37rem;
+    box-shadow:  0px 0.37rem 1rem rgba(0, 0, 0, 0.05);
 }
 .unlisted_toolbar__list li{
     padding: 0;
@@ -164,7 +220,7 @@ a{
     display: flex;
     align-items: flex-start;
     background-color:var(--lesson_module_background) ;
-    margin: 0;
+    margin: 1rem 0;
     padding:1rem;
     border-radius: .4rem;
 }
@@ -175,10 +231,10 @@ a{
     margin-right: 1.96rem;
 }
 .lesson_header__left > h2{
+    display: table;
     border-bottom:0.12rem solid var(--text_color);
     margin: 0;
     padding: 0;
-    width: 2rem;
 }
 .lesson_header__right{
     margin: 0;
@@ -265,14 +321,22 @@ a{
 
 
 /* '<!--START LINK -->' */
-.Modul_link {
+
+.Modul_link{
+
+    padding:.25rem 1rem;
+    background-color: var(--shade-dark-8);
     display: flex;
     align-items: center;
     color:var(--text_color);
     font-weight: 300;
 }
 
-.Modul_link::before {
+.lesson__modul_links li:first-of-type{border-radius: 0.37rem 0.37rem 0 0; overflow: hidden;}
+.lesson__modul_links li:last-of-type{border-radius: 0 0 0.37rem 0.37rem; overflow: hidden;}
+
+
+.Modul_link_camera::before {
     content: ' ';
     width: 2rem; 
     height: 2rem;
@@ -282,13 +346,6 @@ a{
     background-repeat: no-repeat;
 }
 
-
-.Modul_link_pdf {
-    display: flex;
-    align-items: center;
-    color:var(--text_color);
-    font-weight: 300;
-}
 
 .Modul_link_pdf::before {
     content: ' ';
@@ -310,7 +367,7 @@ a{
     justify-content: flex-start;
     background-color: var(--toolBar_courseCard_background);
     padding: 0;
-    margin: 1rem;
+    margin: 1rem .5rem;
     max-width: 15rem;
     border-radius: .5rem .5rem 0 0 ;
     overflow: hidden;
@@ -319,7 +376,6 @@ a{
 .course_card__image{
     margin: 0;
     padding: 0;
-;
 
 }
 
@@ -385,6 +441,7 @@ a{
     display: flex;
     align-items: center;
     line-height: 0;
+    margin: 1rem 0;
 }
 .toggle_button_container p {
     margin: 0;
@@ -434,8 +491,14 @@ a{
 .range_slider{
     display: flex;
     align-items: center;
+    width: 100%;
     margin:0;
     padding: 0;
+}
+.slider_module{
+    padding:1rem ;
+    margin: 1rem 0;
+    background-color: var(--shade-dark-8) ;
 }
 
 .sliderRange{
@@ -443,7 +506,6 @@ a{
     flex-grow: 1;
     height: .1rem;
     margin: 0 2rem;
-    width: 20rem;
     background: #141619;
 }
 .sliderRange::-webkit-slider-thumb{
@@ -472,8 +534,8 @@ a{
     background: var(--klar-button);
     border: none;
     width: 100%;
-    padding: 1rem 2rem;
-    margin: 1rem;
+    padding:1rem;
+    margin: 0;
     border-radius: .25rem;
 }
 
@@ -487,8 +549,23 @@ a{
 
 .lesson{
     background-color: var(--lesson);
-    margin-bottom: 10rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin:2.5rem 0;
 }
+
+.lesson--white{
+    background-color: var(--toolBar_courseCard_background);
+}
+
+.lesson--purple{
+    background-color: var(--toolBar_courseCard_background);
+}
+
+.lesson--blue{
+    background-color: var(--lesson-blue);
+}
+
 .lesson p{
     font-weight: 600;
 }
@@ -498,7 +575,7 @@ a{
     display: flex;
     flex-direction: column;
     gap: .1rem;
-    border-radius: .5rem;
+    
     overflow: hidden;
 
 }
@@ -529,7 +606,7 @@ a{
 }
 
 
-
+/* Index1 styling  */
 .cards__container{
     display: flex;
     flex-wrap: wrap;
@@ -537,11 +614,32 @@ a{
 }
 
 
+/* index2 styling  */
+.main_headerTitle{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.main_subheaderTitle{
+    margin: 1rem;
+    color: var(--text_secondry_text_dark);
+}
+
+
+.main_lessons_toggle{
+    margin-top: 3rem;
+}
+
+
+.lessons_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 @media only screen and (max-width:768px) {
-
-  
-
    .course_card{
     max-width: 100%;
     width: 100%;
